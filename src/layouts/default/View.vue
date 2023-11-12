@@ -1,7 +1,8 @@
 <template>
   <v-app id="inspire">
     <v-navigation-drawer v-model="drawer">
-      <!--  -->
+      <router-link to="/">Go to Home</router-link>
+      <router-link to="/about">Go to About</router-link>
     </v-navigation-drawer>
 
     <v-app-bar>
