@@ -7,7 +7,7 @@
         @keyup.enter="taskStore.addTask"
         ></v-text-field>
     
-        <ListTasks :tasks="taskStore.tasks"/>
+        <ListTasks/>
     </div>
 </template>
 
@@ -16,4 +16,5 @@ import ListTasks from './ListTasks.vue';
 import { useTaskStore} from '@/store/task'
 
 const taskStore = useTaskStore();
+
 </script>
