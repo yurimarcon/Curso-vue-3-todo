@@ -23,11 +23,10 @@
               </v-btn>
             </template>
             <v-list>
-              <v-list-item value="1">
-                <v-list-item-title
-                @click="toggle(index)">Edit</v-list-item-title>
+              <v-list-item value="1" @click="toggleEdit(index)">
+                <v-list-item-title>Edit</v-list-item-title>
               </v-list-item>
-              <v-list-item value="2">
+              <v-list-item value="2" @click="toggleDelete(index)">
                 <v-list-item-title>Delete</v-list-item-title>
               </v-list-item>
             </v-list>
@@ -35,17 +34,23 @@
         </template>
       </v-list-item>
     </v-list>
-    <DialigTaskField 
-    :dialog="showDialogTaskFields"
-    :task="tasks[indexTaskSelected]"
-    @toggle="toggle"
+    <DialogTaskField
+      :dialog="showDialogTaskFields"
+      :task="tasks[indexTaskSelected]"
+      @toggle="toggleEdit"
+      />
+      <DialogDelete 
+      :dialog="showDialogDelete" 
+      @toggleDelete="toggleDelete"
+      @deleteTask="deleteTask"
     />
   </div>
 </template>
 
 <script setup>
 import { ref, defineProps } from "vue";
-import DialigTaskField from "@/components/DialogTaskFields.vue";
+import DialogTaskField from "@/components/DialogTaskFields.vue";
+import DialogDelete from "@/components/DialogDelete.vue";
 
 const props = defineProps({
   tasks: Object,
@@ -53,9 +58,19 @@ const props = defineProps({
 
 const indexTaskSelected = ref(0);
 const showDialogTaskFields = ref(false);
-const toggle = (index)=>{
-    showDialogTaskFields.value = !showDialogTaskFields.value; 
-    if(index != null)
-        indexTaskSelected.value = index;
+const toggleEdit = (index) => {
+  showDialogTaskFields.value = !showDialogTaskFields.value;
+  if (index != null) indexTaskSelected.value = index;
+};
+
+const showDialogDelete = ref(false);
+const toggleDelete = (index) => {
+  showDialogDelete.value = !showDialogDelete.value;
+  if (index != null) indexTaskSelected.value = index;
+};
+
+const deleteTask = () =>{
+    props.tasks.splice(indexTaskSelected.value, 1)
+    toggleDelete();
 }
 </script>

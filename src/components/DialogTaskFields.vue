@@ -25,14 +25,7 @@
                 variant="text"
                 @click="$emit('toggle')"
               >
-                No
-              </v-btn>
-              <v-btn
-                color="green-darken-1"
-                variant="text"
-                @click="$emit('toggle')"
-              >
-                Yes
+                Ok
               </v-btn>
             </v-card-actions>
           </v-card>
