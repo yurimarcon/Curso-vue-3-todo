@@ -25,7 +25,7 @@
             <v-list>
               <v-list-item value="1">
                 <v-list-item-title
-                @click="toggle">Edit</v-list-item-title>
+                @click="toggle(index)">Edit</v-list-item-title>
               </v-list-item>
               <v-list-item value="2">
                 <v-list-item-title>Delete</v-list-item-title>
@@ -37,6 +37,7 @@
     </v-list>
     <DialigTaskField 
     :dialog="showDialogTaskFields"
+    :task="tasks[indexTaskSelected]"
     @toggle="toggle"
     />
   </div>
@@ -50,9 +51,11 @@ const props = defineProps({
   tasks: Object,
 });
 
+const indexTaskSelected = ref(0);
 const showDialogTaskFields = ref(false);
-
-const toggle = ()=>{
+const toggle = (index)=>{
     showDialogTaskFields.value = !showDialogTaskFields.value; 
+    if(index != null)
+        indexTaskSelected.value = index;
 }
 </script>
