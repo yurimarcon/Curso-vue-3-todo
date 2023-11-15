@@ -19,6 +19,7 @@
     "@vitejs/plugin-vue": "^4.0.0",
     "unplugin-fonts": "^1.0.3",
     "vite": "^4.2.0",
+    "vite-plugin-pwa": "^0.16.7",
     "vite-plugin-vuetify": "^1.0.0"
   }
 }
