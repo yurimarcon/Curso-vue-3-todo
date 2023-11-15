@@ -7,21 +7,21 @@
       >
         <v-card>
           <v-card-title class="text-h5">
-            Use Google's location service?
+            Are you sure you want delete this task?
           </v-card-title>
-          <v-card-text>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</v-card-text>
+          <v-card-text>This action can't be reverted..</v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn
-              color="green-darken-1"
-              variant="text"
+              color="red-darken-1"
+              variant="elevated"
               @click="taskStore.toggleDelete"
             >
               No
             </v-btn>
             <v-btn
-              color="green-darken-1"
-              variant="text"
+              color="red-darken-1"
+              variant="outlined"
               @click="taskStore.deleteTask"
             >
               Yes
