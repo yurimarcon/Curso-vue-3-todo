@@ -1,5 +1,5 @@
 {
-  "name": "To Do List with Vuetify 3",
+  "name": "To-do-list",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
