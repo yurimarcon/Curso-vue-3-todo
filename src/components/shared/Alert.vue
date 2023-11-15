@@ -2,8 +2,8 @@
   <div class="alert-notification">
     <v-alert
     class="animate__animated animate__pulse"
-      type="success"
-      text="Task created cusscess!!!"
+      :type="alertStore.type"
+      :text="alertStore.text"
       closable
     ></v-alert>
   </div>
@@ -11,6 +11,8 @@
 
 <script setup>
 import 'animate.css';
+import { useAlertStore } from '@/store/alert'
+const alertStore = useAlertStore();
 
 </script>
 

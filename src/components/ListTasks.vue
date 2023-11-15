@@ -47,8 +47,8 @@
 </template>
 
 <script setup>
-import DialogTaskField from "@/components/DialogTaskFields.vue";
-import DialogDelete from "@/components/DialogDelete.vue";
+import DialogTaskField from "@/components/dialogs/DialogTaskFields.vue";
+import DialogDelete from "@/components/dialogs/DialogDelete.vue";
 import { useTaskStore} from '@/store/task'
 
 const taskStore = useTaskStore();

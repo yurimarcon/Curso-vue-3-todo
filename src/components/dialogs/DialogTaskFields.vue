@@ -23,7 +23,7 @@
               <v-btn
                 color="primary-darken-1"
                 variant="elevated"
-                @click="taskStore.toggleEdit()"
+                @click="taskStore.updateTask()"
               >
                 Ok
               </v-btn>
