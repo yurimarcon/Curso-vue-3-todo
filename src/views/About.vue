@@ -1,3 +1,7 @@
 <template>
-    <h1>About</h1>
+    <About/>
 </template>
+
+<script setup>
+import About from '@/components/about/About.vue'
+</script>

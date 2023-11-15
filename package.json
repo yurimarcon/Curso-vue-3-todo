@@ -1,6 +1,6 @@
 {
-  "name": "vue-3-todo",
-  "version": "0.0.0",
+  "name": "To Do List with Vuetify 3",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
