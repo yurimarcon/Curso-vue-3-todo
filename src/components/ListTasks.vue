@@ -1,5 +1,12 @@
 <template>
   <div>
+    <v-text-field 
+      clearable
+      label="Add Task"
+      v-model="task.title"
+      @keyup.enter="addTask"
+    ></v-text-field>
+
     <v-list lines="three" select-strategy="classic">
       <v-list-subheader>General</v-list-subheader>
 
@@ -38,9 +45,31 @@
 </template>
 
 <script setup>
-import { defineProps } from "vue";
+import { ref } from "vue";
 
-const props = defineProps({
-  tasks: Object,
+const tasks = ref([
+    {
+        title: "Estudar Vue",
+        description: "Estudar vue com Vuetify..."
+    },
+    {
+        title: "Ler documentação",
+        description: "Estudar vue com Vuetify..."
+    }
+]);
+
+const task = ref({
+    title:"",
+    description: ""
 });
+const addTask = ()=>{
+    tasks.value.push({
+        title : task.value.title,
+        description : task.value.descriptio
+    })
+    task.value = {
+        title:"",
+        description: ""
+    }
+}
 </script>
