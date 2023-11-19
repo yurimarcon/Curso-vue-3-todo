@@ -1,7 +1,7 @@
 <template>
-  <ListTasks/>
+  <TodoList/>
 </template>
 
 <script setup>
-  import ListTasks from '@/components/ListTasks.vue'
+  import TodoList from '@/components/TodoList.vue'
 </script>
