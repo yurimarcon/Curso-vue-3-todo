@@ -22,23 +22,6 @@
         <v-list-item-subtitle>
           {{ task.description }}
         </v-list-item-subtitle>
-
-        <template v-slot:append>
-          <v-menu>
-            <template v-slot:activator="{ props }">
-              <v-btn icon="mdi-dots-vertical" variant="text" v-bind="props">
-              </v-btn>
-            </template>
-            <v-list>
-              <v-list-item value="1">
-                <v-list-item-title>Edit</v-list-item-title>
-              </v-list-item>
-              <v-list-item value="2">
-                <v-list-item-title>Delete</v-list-item-title>
-              </v-list-item>
-            </v-list>
-          </v-menu>
-        </template>
       </v-list-item>
     </v-list>
   </div>
